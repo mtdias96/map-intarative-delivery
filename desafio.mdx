@@ -1,0 +1,30 @@
+## Objetivo
+- Desenvolver uma tela de gestão de entregadores em tempo real com as seguintes funcionalidades:
+
+1. Funcionalidade principal: Mapa interativo
+## Cada entregador possui: 
+- Uma ou mais paradas (checkpoints)
+- um ponto de fim
+- O sistema deve mostrar a rota completa entre esses pontos
+- A localização em tempo real do entregador deve ser exibida como um "boneco" no mapa.
+
+## Conforme o entregador se move:
+- A rota deve ser atualizada em tempo real
+- Trechos ja completados podem desaparecer ou ser destacados de forma diferente.
+
+2. Multiusuarios/Gestão de entregadores
+ O sistema deve suportar vários entregadores simultaneamente
+# O gestor deve ser capaz de:
+- Visualizar um entregador em específico
+- Visualizar todos ou um grupo de entregadores
+# Filtrar por:
+- Status: Ativo/Inativo
+- Localização geográfica
+- Outros critérios que você achar relevantes
+- Ver onde cada entregador está
+- Ver quais rotas eles estão seguindo
+
+
+
+
+"Escolhi PostgreSQL com PostGIS por sua capacidade de lidar com dados geoespaciais de forma nativa, essencial para rastreamento de entregadores e gestão de rotas. Combinei com Socket.io para garantir atualizações em tempo real, equilibrando robustez e dinamismo. Essa arquitetura é escalável, suporta filtros complexos e demonstra domínio técnico em bancos relacionais e comunicação em tempo real."

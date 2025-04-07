@@ -1,0 +1,23 @@
+{
+  "name": "map-intarative-delivery",
+  "version": "1.0.0",
+  "main": "index.js",
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ]
+  },
+  "scripts": {
+    "dev": "concurrently \"yarn workspace @map-intarative-delivery/server dev\" \"yarn workspace @map-intarative-delivery/web dev\"",
+    "build": "yarn workspace @map-intarative-delivery/server build && yarn workspace @map-intarative-delivery/web build",
+    "lint": "yarn workspace @map-intarative-delivery/server lint && yarn workspace @map-intarative-delivery/web lint",
+    "test": "yarn workspace @map-intarative-delivery/server test && yarn workspace @map-intarative-delivery/web test"
+  },
+  "repository": "git@github.com:mtdias96/map-intarative-delivery.git",
+  "author": "mtdias96 <matheusdias.front96@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}

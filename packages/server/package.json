@@ -1,0 +1,31 @@
+{
+  "name": "@map-intarative-delivery/server",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "license": "MIT",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc",
+    "lint": "eslint --ext .js,.ts src",
+    "test": "echo \"No tests yet\""
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "drizzle-orm": "^0.41.0",
+    "express": "^5.1.0",
+    "postgres": "^3.4.5"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.24.0",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.1",
+    "drizzle-kit": "^0.30.6",
+    "eslint": "^9.24.0",
+    "globals": "^16.0.0",
+    "tsx": "^4.19.3",
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.29.1"
+  }
+}
