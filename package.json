@@ -12,7 +12,9 @@
     "dev": "concurrently \"yarn workspace @map-intarative-delivery/server dev\" \"yarn workspace @map-intarative-delivery/web dev\"",
     "build": "yarn workspace @map-intarative-delivery/server build && yarn workspace @map-intarative-delivery/web build",
     "lint": "yarn workspace @map-intarative-delivery/server lint && yarn workspace @map-intarative-delivery/web lint",
-    "test": "yarn workspace @map-intarative-delivery/server test && yarn workspace @map-intarative-delivery/web test"
+    "test": "yarn workspace @map-intarative-delivery/server test && yarn workspace @map-intarative-delivery/web test",
+    "ci:lint": "yarn workspace @map-intarative-delivery/server lint && yarn workspace @map-intarative-delivery/web lint",
+    "ci:typecheck": "yarn workspace @map-intarative-delivery/server tsc --noEmit && yarn workspace @map-intarative-delivery/web tsc --noEmit"
   },
   "repository": "git@github.com:mtdias96/map-intarative-delivery.git",
   "author": "mtdias96 <matheusdias.front96@gmail.com>",
