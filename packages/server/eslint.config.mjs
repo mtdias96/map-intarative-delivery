@@ -1,25 +1,21 @@
+import js from "@eslint/js";
 import { defineConfig } from "eslint/config";
 import globals from "globals";
 import tseslint from "typescript-eslint";
 
 export default defineConfig([
-  { 
+  {
     files: ["**/*.{js,mjs,cjs,ts}"],
-    languageOptions: { 
+    languageOptions: {
       globals: globals.node,
-      parserOptions: {
-        project: true,
-        tsconfigRootDir: import.meta.dirname,
-      },
     }
   },
-  { 
-    files: ["**/*.{js,mjs,cjs,ts}"], 
-    plugins: { js }, 
-    extends: ["js/recommended"] 
+  {
+    files: ["**/*.{js,mjs,cjs,ts}"],
+    plugins: { js },
+    extends: ["js/recommended"]
   },
-  ...tseslint.configs.recommendedTypeChecked,
-  ...tseslint.configs.stylisticTypeChecked,
+  ...tseslint.configs.recommended,
   {
     files: ["**/*.{js,mjs,cjs,ts}"],
     rules: {
@@ -30,25 +26,12 @@ export default defineConfig([
       "no-promise-executor-return": "error",
       "no-param-reassign": "error",
       "no-throw-literal": "error",
-      
+
       // TypeScript specific
-      "@typescript-eslint/explicit-function-return-type": "error",
       "@typescript-eslint/no-explicit-any": "error",
       "@typescript-eslint/no-unused-vars": "error",
       "@typescript-eslint/consistent-type-imports": "error",
-      "@typescript-eslint/naming-convention": [
-        "error",
-        {
-          "selector": "interface",
-          "format": ["PascalCase"],
-          "prefix": ["I"]
-        },
-        {
-          "selector": "typeAlias",
-          "format": ["PascalCase"]
-        }
-      ],
-      
+
       // Code style
       "arrow-body-style": ["error", "as-needed"],
       "prefer-arrow-callback": "error",

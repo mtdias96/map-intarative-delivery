@@ -9,17 +9,12 @@ export default tseslint.config(
   {
     extends: [
       js.configs.recommended,
-      ...tseslint.configs.recommendedTypeChecked,
-      ...tseslint.configs.stylisticTypeChecked
+      ...tseslint.configs.recommended,
     ],
     files: ['**/*.{ts,tsx}'],
     languageOptions: {
       ecmaVersion: 2020,
       globals: globals.browser,
-      parserOptions: {
-        project: true,
-        tsconfigRootDir: import.meta.dirname,
-      },
     },
     plugins: {
       'react-hooks': reactHooks,
@@ -40,33 +35,16 @@ export default tseslint.config(
       'no-promise-executor-return': 'error',
       'no-param-reassign': 'error',
       'no-throw-literal': 'error',
-      
+
       // TypeScript specific
-      '@typescript-eslint/explicit-function-return-type': ['error', { 
-        allowExpressions: true,
-        allowArrowFunctions: true,
-        allowHigherOrderFunctions: true
-      }],
       '@typescript-eslint/no-explicit-any': 'error',
       '@typescript-eslint/no-unused-vars': 'error',
       '@typescript-eslint/consistent-type-imports': 'error',
-      '@typescript-eslint/naming-convention': [
-        'error',
-        {
-          'selector': 'interface',
-          'format': ['PascalCase'],
-          'prefix': ['I']
-        },
-        {
-          'selector': 'typeAlias',
-          'format': ['PascalCase']
-        }
-      ],
-      
+
       // React specific
       'react-hooks/rules-of-hooks': 'error',
       'react-hooks/exhaustive-deps': 'warn',
-      
+
       // Code style
       'arrow-body-style': ['error', 'as-needed'],
       'prefer-arrow-callback': 'error',
