@@ -3,6 +3,10 @@ node_modules
 .env.local
 .env.*.local
 
+.mdx
+
 **/.DS_Store
 **/dist
 yarn-error.log
+
+packages/server/supabase/migrations/meta

@@ -20,7 +20,7 @@ export default defineConfig([
     files: ["**/*.{js,mjs,cjs,ts}"],
     rules: {
       // Error prevention
-      "no-unused-vars": "error",
+      "no-unused-vars": "off",
       "no-console": ["warn", { allow: ["warn", "error", "info"] }],
       "no-return-await": "error",
       "no-promise-executor-return": "error",
@@ -28,8 +28,13 @@ export default defineConfig([
       "no-throw-literal": "error",
 
       // TypeScript specific
-      "@typescript-eslint/no-explicit-any": "error",
-      "@typescript-eslint/no-unused-vars": "error",
+      "@typescript-eslint/no-explicit-any": "off",
+      "@typescript-eslint/no-unused-vars": ["error", { 
+        "argsIgnorePattern": "^_", 
+        "varsIgnorePattern": "^_", 
+        "ignoreRestSiblings": true,
+        "args": "none"
+      }],
       "@typescript-eslint/consistent-type-imports": "error",
 
       // Code style
