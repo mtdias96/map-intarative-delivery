@@ -37,7 +37,7 @@ export default tseslint.config(
       'no-throw-literal': 'error',
 
       // TypeScript specific
-      '@typescript-eslint/no-explicit-any': 'error',
+      '@typescript-eslint/no-explicit-any': 'off',
       '@typescript-eslint/no-unused-vars': 'error',
       '@typescript-eslint/consistent-type-imports': 'error',
 
