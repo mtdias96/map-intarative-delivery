@@ -16,6 +16,7 @@ interface IEnvironment {
   SERVER_PORT: number;
   DATABASE_URL: string;
   CORS_ORIGIN: string;
+  JWT_SECRET: string;
 }
 
 export const env: IEnvironment = {
@@ -23,4 +24,5 @@ export const env: IEnvironment = {
   SERVER_PORT: parseInt(process.env.SERVER_PORT ?? '3333', 10),
   DATABASE_URL: process.env.DATABASE_URL ?? 'postgres://postgres:postgres@localhost:5432/map_delivery',
   CORS_ORIGIN: process.env.CORS_ORIGIN ?? 'http://localhost:5173',
+  JWT_SECRET: process.env.JWT_SECRET ?? 'delivery-secret',
 }; 
