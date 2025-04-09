@@ -1,8 +1,13 @@
 import cors from 'cors';
 import express from 'express';
+import { routeAdapter } from './application/adapters/routeAdapter';
+import { makeSigninController } from './application/factories/login/makeSigninController';
+import { makeSignUpController } from './application/factories/login/makeSignUpController';
 import { env } from './config/env';
 
 const app = express();
+
+app.use(express.json());
 
 app.use(cors({
   origin: env.CORS_ORIGIN,
@@ -10,17 +15,11 @@ app.use(cors({
   allowedHeaders: ['Content-Type', 'Authorization'],
 }));
 
-app.use(express.json());
+//Login
+app.post('/sign-up', routeAdapter(makeSignUpController()));
+app.post('/sign-in', routeAdapter(makeSigninController()));
 
-app.get('/', (_, res) => {
-  res.json({ 
-    message: 'API de entrega em tempo real',
-    env: env.NODE_ENV 
-  });
-});
 
 app.listen(env.SERVER_PORT, () => {
-  console.info(`Servidor rodando na porta ${env.SERVER_PORT} em modo ${env.NODE_ENV}`);
+  console.info(`Servidor rodando na porta http://localhost:${env.SERVER_PORT} em modo ${env.NODE_ENV}`);
 });
-
-
